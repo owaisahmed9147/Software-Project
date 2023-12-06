@@ -1,0 +1,15 @@
+use case 3(owais)
+
+Overview of the dashboard:
+
+Administrators get a live dashboard that summarizes important indicators as soon as they check in. This provides an overview of the blog's current state and contains 
+real-time analytics, recent entries, and user interaction metrics.
+
+Management of Content:
+
+Administrators can examine all published and draft blog posts by logging into the "Content" area. This extensive list makes it simple to keep track of content 
+schedules and guarantees a steady stream of interesting information.
+
+Calendar of Editing:
+You have access to an editorial calendar that provides an overview of future articles. Strategic planning is facilitated by this feature, which helps administrators arrange 
+content themes, coordinate with marketing initiatives, and keep a consistent publishing schedule.
