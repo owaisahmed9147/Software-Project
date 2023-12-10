@@ -1,4 +1,20 @@
+<<<<<<< HEAD
+
+use case 1 (aysha)
+<-------Author blog post -------->
+
+Content production and communication broadly refers to the work that authors do when they write a blog article. 
+Blog entries are a vehicle via which writers communicate with their readers, imparting knowledge, perspectives, thoughts, and stories. The particular
+tasks associated with writing a blog post are as follows:
+
+Research: Writers frequently do out research to compile pertinent data, facts, and information to bolster their blog posts. This could entail reading studies and articles 
+and keeping up with the most recent advancements on the selected subject.
+
+Writing: Creating the written content is the main task. This entails organizing the content, coming up with interesting openers and endings, and making sure the ideas flow 
+naturally from one paragraph to the next. The intended readership may influence the writing style.
+
 use case 3(owais)
+<-------Admin-------->
 
 Overview of the dashboard:
 
@@ -13,3 +29,5 @@ schedules and guarantees a steady stream of interesting information.
 Calendar of Editing:
 You have access to an editorial calendar that provides an overview of future articles. Strategic planning is facilitated by this feature, which helps administrators arrange 
 content themes, coordinate with marketing initiatives, and keep a consistent publishing schedule.
+=======
+
