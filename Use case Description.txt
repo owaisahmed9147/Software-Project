@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+USE CASES:
 
 use case 1 (aysha)
 <-------Author blog post -------->
