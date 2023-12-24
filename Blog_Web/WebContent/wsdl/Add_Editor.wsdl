@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Project" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Project" xmlns:intf="http://Project" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Project" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getInfoForAdding">
+    <complexType>
+     <sequence>
+      <element name="password" type="xsd:string"/>
+      <element name="type" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoForAddingResponse">
+    <complexType>
+     <sequence>
+      <element name="getInfoForAddingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getInfoForAddingResponse">
+
+      <wsdl:part element="impl:getInfoForAddingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoForAddingRequest">
+
+      <wsdl:part element="impl:getInfoForAdding" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Add_Editor">
+
+      <wsdl:operation name="getInfoForAdding">
+
+         <wsdl:input message="impl:getInfoForAddingRequest" name="getInfoForAddingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getInfoForAddingResponse" name="getInfoForAddingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Add_EditorSoapBinding" type="impl:Add_Editor">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getInfoForAdding">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInfoForAddingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInfoForAddingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Add_EditorService">
+
+      <wsdl:port binding="impl:Add_EditorSoapBinding" name="Add_Editor">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Web/services/Add_Editor"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
