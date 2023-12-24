@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Project" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Project" xmlns:intf="http://Project" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Project" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="blog_posting">
+    <complexType>
+     <sequence>
+      <element name="ID" type="xsd:int"/>
+      <element name="title" type="xsd:string"/>
+      <element name="content" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="blog_postingResponse">
+    <complexType>
+     <sequence>
+      <element name="blog_postingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="blog_postingRequest">
+
+      <wsdl:part element="impl:blog_posting" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="blog_postingResponse">
+
+      <wsdl:part element="impl:blog_postingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="blog_post">
+
+      <wsdl:operation name="blog_posting">
+
+         <wsdl:input message="impl:blog_postingRequest" name="blog_postingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:blog_postingResponse" name="blog_postingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="blog_postSoapBinding" type="impl:blog_post">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="blog_posting">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="blog_postingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="blog_postingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="blog_postService">
+
+      <wsdl:port binding="impl:blog_postSoapBinding" name="blog_post">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Web/services/blog_post"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
