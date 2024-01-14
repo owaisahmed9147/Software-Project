@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 07:06 AM
+-- Generation Time: Jan 14, 2024 at 08:09 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrator` (
   `admin_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `admin_password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -36,8 +37,8 @@ CREATE TABLE `administrator` (
 -- Dumping data for table `administrator`
 --
 
-INSERT INTO `administrator` (`admin_id`, `admin_password`) VALUES
-(1, 'admin123');
+INSERT INTO `administrator` (`admin_id`, `username`, `admin_password`) VALUES
+(1, 'admin', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -70,17 +71,16 @@ CREATE TABLE `blog_post` (
   `post_id` int(11) NOT NULL,
   `author_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `content` varchar(10000) NOT NULL,
-  `created_at` datetime NOT NULL
+  `content` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `blog_post`
 --
 
-INSERT INTO `blog_post` (`post_id`, `author_id`, `title`, `content`, `created_at`) VALUES
-(1, 2, 'lorem', 'Mashable is a world-renowned, entertainment, and multi-platform media channel.\r\n\r\nPowered by its own proprietary technology, this tech blog is the go-to source for tech, digital culture, and entertainment content for its influential and dedicated global audience!\r\n\r\nIt is one of the most influential blogs on technology on the internet today!\r\n\r\nMashable provides information to those who wish to catch up on all most everything happening around the tech world including movies, travel, finance, and, of course, gadgets.', '2023-12-21 10:25:17'),
-(2, 1, 'lorem', 'Lorem ipsum dolor sit amet. Est dolorem doloremque est sunt nobis et distinctio earum qui vitae consequatur. Qui ipsam officiis non pariatur inventore sit aperiam repellat et odio dolorem. Et culpa magni et quod itaque eos dicta magnam qui exercitationem sint 33 consectetur voluptatem', '2022-07-10 04:10:15');
+INSERT INTO `blog_post` (`post_id`, `author_id`, `title`, `content`) VALUES
+(1, 2, 'lorem', 'Mashable is a world-renowned, entertainment, and multi-platform media channel.\r\n\r\nPowered by its own proprietary technology, this tech blog is the go-to source for tech, digital culture, and entertainment content for its influential and dedicated global audience!\r\n\r\nIt is one of the most influential blogs on technology on the internet today!\r\n\r\nMashable provides information to those who wish to catch up on all most everything happening around the tech world including movies, travel, finance, and, of course, gadgets.'),
+(2, 1, 'lorem', 'Lorem ipsum dolor sit amet. Est dolorem doloremque est sunt nobis et distinctio earum qui vitae consequatur. Qui ipsam officiis non pariatur inventore sit aperiam repellat et odio dolorem. Et culpa magni et quod itaque eos dicta magnam qui exercitationem sint 33 consectetur voluptatem');
 
 -- --------------------------------------------------------
 
@@ -111,6 +111,7 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `post_id`, `content`) VALUES
 
 CREATE TABLE `editor_table` (
   `editor_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `editor_password` varchar(100) NOT NULL,
   `editor_type` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -119,10 +120,10 @@ CREATE TABLE `editor_table` (
 -- Dumping data for table `editor_table`
 --
 
-INSERT INTO `editor_table` (`editor_id`, `editor_password`, `editor_type`) VALUES
-(1, 'editor101', 'primary'),
-(2, 'editor102', 'secondary'),
-(3, 'editor103', 'guest');
+INSERT INTO `editor_table` (`editor_id`, `username`, `editor_password`, `editor_type`) VALUES
+(1, 'editor1', 'editor101', 'primary'),
+(2, 'editor2', 'editor102', 'secondary'),
+(3, 'editor3', 'editor103', 'guest');
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,10 @@ CREATE TABLE `user_table` (
 INSERT INTO `user_table` (`User_ID`, `Username`, `Email`, `password`) VALUES
 (1, 'Sid_Owais', 'owais@gmail.com', 'owais123'),
 (2, 'Aysha', 'aysha@gmail.com', 'aysha123'),
-(3, 'Sheza', 'sheza@gmail.com', 'sheza123');
+(3, 'Sheza', 'sheza@gmail.com', 'sheza123'),
+(4, 'khizer ahmed', 'khizer@gmail.com', 'khizer123'),
+(5, 'ali', 'ali@gmail.com', 'ali123'),
+(26, 'xyz', 'xyz', 'xyz');
 
 --
 -- Indexes for dumped tables
@@ -262,7 +266,7 @@ ALTER TABLE `moderation`
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
