@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="Add" >
+    	<h2>Add Editor</h2>
+	    <label>User Name:</label>
+	    <input type="text" id="username" name="text" required>
+	
+	    <label>Password:</label>
+	    <input type="password" id="password" name="password" required>
+	
+	    <button type="button" onclick="addEditor()">Add</button>
+	    
+ </div>
+
+<script> 
+
+function addEditor(){
+	
+	username = document.getElementById('username').value;
+	password = document.getElementById('password').value;
+	
+	var myHeaders = new Headers();
+	myHeaders.append("SOAPAction", "\"\"");
+	myHeaders.append("Content-Type", "application/json");
+
+	var raw = `<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <getInfoForAdding xmlns="http://Project">
+            <password>${username}</password>
+            <type>${password}</type>
+        </getInfoForAdding>
+    </Body>
+</Envelope>`;
+
+	var requestOptions = {
+	  method: 'POST',
+	  headers: myHeaders,
+	  body: raw,
+	  redirect: 'follow'
+	};
+
+	fetch("http://localhost:8080/Blog_Web/services/Add_Editor", requestOptions)
+	  .then(response => response.text())
+	  .then(result => console.log(result))
+	  .catch(error => console.log('error', error));
+	
+}
+
+</script>
+</body>
+</html>
