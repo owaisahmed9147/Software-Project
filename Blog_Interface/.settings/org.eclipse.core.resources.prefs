@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/project/Blog.java=UTF-8
+encoding//src/project/Login.java=UTF-8
+encoding//src/project/LoginService.java=UTF-8
+encoding//src/project/LoginServiceLocator.java=UTF-8
+encoding//src/project/LoginSoapBindingStub.java=UTF-8
+encoding//src/project/Showsblogs.java=UTF-8
+encoding//src/project/ShowsblogsService.java=UTF-8
+encoding//src/project/ShowsblogsServiceLocator.java=UTF-8
+encoding//src/project/ShowsblogsSoapBindingStub.java=UTF-8
+encoding//src/project/Signup.java=UTF-8
+encoding//src/project/SignupService.java=UTF-8
+encoding//src/project/SignupServiceLocator.java=UTF-8
+encoding//src/project/SignupSoapBindingStub.java=UTF-8
+encoding//src/project/User_Details.java=UTF-8

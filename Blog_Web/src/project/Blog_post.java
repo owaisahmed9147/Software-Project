@@ -1,11 +1,11 @@
-package Project;
+package project;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class blog_post {
+public class Blog_post {
  public String blog_posting(int ID ,String title,String content)
  {
 
