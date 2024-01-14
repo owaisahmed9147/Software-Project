@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://Project" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Project" xmlns:intf="http://Project" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Project" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="loginuser">
+    <complexType>
+     <sequence>
+      <element name="Username" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginuserResponse">
+    <complexType>
+     <sequence>
+      <element name="loginuserReturn" type="impl:User_Details"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="User_Details">
+    <sequence>
+     <element name="userid" type="xsd:int"/>
+     <element name="username" nillable="true" type="xsd:string"/>
+     <element name="password" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="loginuserRequest">
+
+      <wsdl:part element="impl:loginuser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginuserResponse">
+
+      <wsdl:part element="impl:loginuserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Login_User">
+
+      <wsdl:operation name="loginuser">
+
+         <wsdl:input message="impl:loginuserRequest" name="loginuserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginuserResponse" name="loginuserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Login_UserSoapBinding" type="impl:Login_User">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="loginuser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginuserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginuserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Login_UserService">
+
+      <wsdl:port binding="impl:Login_UserSoapBinding" name="Login_User">
+
+         <wsdlsoap:address location="http://localhost:8080/Blog_Web/services/Login_User"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -10,21 +10,21 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from LoginService WSDL service -->
+  <!-- Services from Login_EditorService WSDL service -->
 
-  <service name="Login" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Login_Editor" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://Project"/>
-      <parameter name="wsdlServiceElement" value="LoginService"/>
+      <parameter name="wsdlServiceElement" value="Login_EditorService"/>
       <parameter name="schemaQualified" value="http://Project"/>
-      <parameter name="wsdlServicePort" value="Login"/>
-      <parameter name="className" value="Project.LoginSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="Login"/>
+      <parameter name="wsdlServicePort" value="Login_Editor"/>
+      <parameter name="className" value="Project.Login_EditorSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Login_Editor"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="login_details" qname="operNS:login_details" xmlns:operNS="http://Project" returnQName="retNS:login_detailsReturn" xmlns:retNS="http://Project" returnType="rtns:User_Details" xmlns:rtns="http://Project" soapAction="" >
-        <parameter qname="pns:email" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:pass" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="logineditor" qname="operNS:logineditor" xmlns:operNS="http://Project" returnQName="retNS:logineditorReturn" xmlns:retNS="http://Project" returnType="rtns:User_Details" xmlns:rtns="http://Project" soapAction="" >
+        <parameter qname="pns:Username" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="login_details"/>
+      <parameter name="allowedMethods" value="logineditor"/>
 
       <typeMapping
         xmlns:ns="http://Project"
