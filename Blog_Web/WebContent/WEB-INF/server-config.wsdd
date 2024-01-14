@@ -118,40 +118,42 @@
   <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
   <ns1:parameter name="wsdlServiceElement" value="Login_UserService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns11:User_Details" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:Project.User_Details" xmlns:ns11="http://Project"/>
-</ns1:service>
+ </ns1:service>
  <ns1:service name="blog_post" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="blog_posting" qname="ns1:blog_posting" returnQName="ns1:blog_postingReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:ID" type="xsd:int"/>
-   <ns2:parameter qname="ns1:title" type="xsd:string"/>
-   <ns2:parameter qname="ns1:content" type="xsd:string"/>
-  </ns2:operation>
+  <ns1:operation name="blog_posting" qname="ns12:blog_posting" returnQName="ns12:blog_postingReturn" returnType="xsd:string" soapAction="" xmlns:ns12="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:ID" type="xsd:int"/>
+   <ns1:parameter qname="ns12:title" type="xsd:string"/>
+   <ns1:parameter qname="ns12:content" type="xsd:string"/>
+  </ns1:operation>
   <ns1:parameter name="allowedMethods" value="blog_posting"/>
-  <ns1:parameter name="wsdlPortType" value="blog_post"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://Project"/>
-  <ns1:parameter name="wsdlServicePort" value="blog_post"/>
+  <ns1:parameter name="wsdlPortType" value="blog_post"/>
   <ns1:parameter name="className" value="Project.blog_post"/>
+  <ns1:parameter name="wsdlServicePort" value="blog_post"/>
+  <ns1:parameter name="schemaQualified" value="http://Project"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
   <ns1:parameter name="wsdlServiceElement" value="blog_postService"/>
  </ns1:service>
  <ns1:service name="blog_update" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="blog_updating" qname="ns2:blog_updating" returnQName="ns2:blog_updatingReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:ID" type="xsd:int"/>
-   <ns1:parameter qname="ns2:newTitle" type="xsd:string"/>
-   <ns1:parameter qname="ns2:newContent" type="xsd:string"/>
+  <ns1:operation name="blog_updating" qname="ns13:blog_updating" returnQName="ns13:blog_updatingReturn" returnType="xsd:string" soapAction="" xmlns:ns13="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns13:ID" type="xsd:int"/>
+   <ns1:parameter qname="ns13:newTitle" type="xsd:string"/>
+   <ns1:parameter qname="ns13:newContent" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="blog_updating"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="blog_update"/>
-  <ns1:parameter name="className" value="Project.blog_update"/>
-  <ns1:parameter name="wsdlServicePort" value="blog_update"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://Project"/>
+  <ns1:parameter name="wsdlServicePort" value="blog_update"/>
+  <ns1:parameter name="className" value="Project.blog_update"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
   <ns1:parameter name="wsdlServiceElement" value="blog_updateService"/>
+ </ns1:service>
  <ns1:service name="Add_Editor" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getInfoForAdding" qname="ns2:getInfoForAdding" returnQName="ns2:getInfoForAddingReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:password" type="xsd:string"/>
-   <ns1:parameter qname="ns2:type" type="xsd:string"/>
+  <ns1:operation name="getInfoForAdding" qname="ns14:getInfoForAdding" returnQName="ns14:getInfoForAddingReturn" returnType="xsd:string" soapAction="" xmlns:ns14="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:username" type="xsd:string"/>
+   <ns1:parameter qname="ns14:password" type="xsd:string"/>
+   <ns1:parameter qname="ns14:type" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getInfoForAdding"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>

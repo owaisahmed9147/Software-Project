@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class Add_Editor {
 	
-	public String getInfoForAdding(String password , String type ) {
+	public String getInfoForAdding(String username, String password , String type ) {
 		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -11,7 +11,7 @@ public class Add_Editor {
 			DriverManager.getConnection("jdbc:mysql://localhost:3306/blog","root","");
 			Statement stmt=con.createStatement();
 			
-			 int x = stmt.executeUpdate("insert into editor_table(editor_password , editor_type) values('"+password+"' , '"+type+"')");
+			 int x = stmt.executeUpdate("insert into editor_table(username,editor_password , editor_type) values('"+username+"','"+password+"' , '"+type+"')");
 
 			 if(x > 0) {
 				 System.out.println("Query executed successfully");
