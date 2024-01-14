@@ -22,8 +22,8 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="blog_updating" qname="operNS:blog_updating" xmlns:operNS="http://Project" returnQName="retNS:blog_updatingReturn" xmlns:retNS="http://Project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:ID" xmlns:pns="http://Project" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:title" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:content" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:newTitle" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:newContent" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="blog_updating"/>
 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Updating Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #blog-update-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        #blog-update-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #blog-update-form input,
+        #blog-update-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #blog-update-form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #blog-update-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blog-update-form">
+        <h2>Update Blog</h2>
+        <form action="#" method="post" onsubmit="updateBlog(); return false;">
+            <label for="postId">Post ID:</label>
+            <input type="text" id="postId" name="postId" required>
+
+            <label for="blogTitle">Blog Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+
+            <label for="blogContent">Blog Content:</label>
+            <textarea id="blogContent" name="blogContent" rows="8" required></textarea>
+
+            <button type="submit">Update Blog</button>
+        </form>
+    </div>
+
+    <script>
+    function updateBlog() {
+    	 var myHeaders = new Headers();
+    	    myHeaders.append("SoapAction", "\"\"");
+    	    myHeaders.append("Content-Type", "text/plain");
+    	    // Get values from input fields
+    	    var postId = document.getElementById("postId").value;
+    	    var newTitle = document.getElementById("blogTitle").value;
+    	    var newContent = document.getElementById("blogContent").value;
+
+    	    var raw = `<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    	        <Body>
+    	            <blog_updating xmlns="http://Project">
+    	                <ID>${postId}</ID>
+    	                <newTitle>${newTitle}</newTitle>
+    	                <newContent>${newContent}</newContent>
+    	            </blog_updating>
+    	        </Body>
+    	    </Envelope>`;
+
+    	    var requestOptions = {
+    	      method: 'POST',
+    	      headers: myHeaders,
+    	      body: raw,
+    	      redirect: 'follow'
+    	    };
+
+    	    fetch("http://localhost:8080/Blog_Web/services/blog_update", requestOptions)
+    	      .then(response => response.text())
+    	      .then(result => console.log(result))
+    	      .catch(error => console.log('error', error));
+    }
+    
+    
+   
+    </script>
+</body>
+
+</html>
