@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #blog-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        #blog-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #blog-form input,
+        #blog-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #blog-form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #blog-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="blog-form">
+        <h2>Create a New Blog Post</h2>
+        <form action="#" method="post" onsubmit="blog_editing(); return false;">
+            <label for="authorId">Author ID:</label>
+            <input type="text" id="authorId" name="authorId" required>
+            <label for="blogTitle">Blog Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+
+            <label for="blogContent">Blog Content:</label>
+            <textarea id="blogContent" name="blogContent" rows="8" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        function parseXML(xmlString) {
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+            return xmlDoc;
+        }
+
+        function blog_editing() {
+            var myHeaders = new Headers();
+            myHeaders.append("SoapAction", "\"\"");
+            myHeaders.append("Content-Type", "text/plain");
+
+            // Get values from input fields
+            var authorId = document.getElementById("authorId").value;
+            var blogTitle = document.getElementById("blogTitle").value;
+            var blogContent = document.getElementById("blogContent").value;
+
+            var raw = `<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+                <Body>
+                    <blog_posting xmlns="http://project">
+                        <ID>${authorId}</ID>
+                        <title>${blogTitle}</title>
+                        <content>${blogContent}</content>
+                    </blog_posting>
+                </Body>
+            </Envelope>`;
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("http://localhost:8080/Blog_Web/services/Blog_post", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result);
+                    location.reload(); // Refresh the page after successful submission
+                })
+                .catch(error => console.log('error', error));
+        }
+    </script>
+</body>
+
+
+</html>
