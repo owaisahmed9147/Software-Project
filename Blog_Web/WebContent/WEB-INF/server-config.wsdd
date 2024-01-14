@@ -29,11 +29,11 @@
    <ns2:parameter qname="ns1:password" type="xsd:string"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="get_info_for_signup"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Signup"/>
-  <ns1:parameter name="className" value="Project.Signup"/>
-  <ns1:parameter name="wsdlServicePort" value="Signup"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://Project"/>
+  <ns1:parameter name="wsdlServicePort" value="Signup"/>
+  <ns1:parameter name="className" value="Project.Signup"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
   <ns1:parameter name="wsdlServiceElement" value="SignupService"/>
  </ns1:service>
@@ -148,6 +148,19 @@
   <ns1:parameter name="schemaQualified" value="http://Project"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
   <ns1:parameter name="wsdlServiceElement" value="blog_updateService"/>
+ <ns1:service name="Add_Editor" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getInfoForAdding" qname="ns2:getInfoForAdding" returnQName="ns2:getInfoForAddingReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://Project" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:password" type="xsd:string"/>
+   <ns1:parameter qname="ns2:type" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getInfoForAdding"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Add_Editor"/>
+  <ns1:parameter name="className" value="Project.Add_Editor"/>
+  <ns1:parameter name="wsdlServicePort" value="Add_Editor"/>
+  <ns1:parameter name="schemaQualified" value="http://Project"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://Project"/>
+  <ns1:parameter name="wsdlServiceElement" value="Add_EditorService"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
