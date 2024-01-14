@@ -10,20 +10,20 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from blog_updateService WSDL service -->
+  <!-- Services from Blog_updateService WSDL service -->
 
-  <service name="blog_update" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
-      <parameter name="wsdlServiceElement" value="blog_updateService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
-      <parameter name="wsdlServicePort" value="blog_update"/>
-      <parameter name="className" value="Project.Blog_updateSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="blog_update"/>
+  <service name="Blog_update" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
+      <parameter name="wsdlServiceElement" value="Blog_updateService"/>
+      <parameter name="schemaQualified" value="http://project"/>
+      <parameter name="wsdlServicePort" value="Blog_update"/>
+      <parameter name="className" value="project.Blog_updateSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Blog_update"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="blog_updating" qname="operNS:blog_updating" xmlns:operNS="http://Project" returnQName="retNS:blog_updatingReturn" xmlns:retNS="http://Project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:ID" xmlns:pns="http://Project" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:title" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:content" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="blog_updating" qname="operNS:blog_updating" xmlns:operNS="http://project" returnQName="retNS:blog_updatingReturn" xmlns:retNS="http://project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ID" xmlns:pns="http://project" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:newTitle" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:newContent" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="blog_updating"/>
 

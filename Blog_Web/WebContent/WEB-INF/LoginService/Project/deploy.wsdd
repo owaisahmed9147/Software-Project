@@ -3,19 +3,19 @@
   <!-- Services from LoginService WSDL service -->
 
   <service name="Login" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
       <parameter name="wsdlServiceElement" value="LoginService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
+      <parameter name="schemaQualified" value="http://project"/>
       <parameter name="wsdlServicePort" value="Login"/>
-      <parameter name="className" value="Project.Login"/>
+      <parameter name="className" value="project.Login"/>
       <parameter name="wsdlPortType" value="Login"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://Project" xmlns:retNS="http://Project" xmlns:rtns="http://Project" name="login_details" qname="operNS:login_details" returnQName="retNS:login_detailsReturn" returnType="rtns:User_Details" soapAction="">
-        <parameter xmlns:pns="http://Project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:email" type="tns:string"/>
-        <parameter xmlns:pns="http://Project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pass" type="tns:string"/>
+      <operation xmlns:operNS="http://project" xmlns:retNS="http://project" xmlns:rtns="http://project" name="login_details" qname="operNS:login_details" returnQName="retNS:login_detailsReturn" returnType="rtns:User_Details" soapAction="">
+        <parameter xmlns:pns="http://project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:email" type="tns:string"/>
+        <parameter xmlns:pns="http://project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pass" type="tns:string"/>
       </operation>
       <parameter name="allowedMethods" value="login_details"/>
 
-      <typeMapping xmlns:ns="http://Project" qname="ns:User_Details" type="java:Project.User_Details" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://project" qname="ns:User_Details" type="java:project.User_Details" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

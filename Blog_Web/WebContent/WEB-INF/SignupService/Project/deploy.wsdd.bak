@@ -13,17 +13,17 @@
   <!-- Services from SignupService WSDL service -->
 
   <service name="Signup" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
       <parameter name="wsdlServiceElement" value="SignupService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
+      <parameter name="schemaQualified" value="http://project"/>
       <parameter name="wsdlServicePort" value="Signup"/>
-      <parameter name="className" value="Project.SignupSoapBindingImpl"/>
+      <parameter name="className" value="project.SignupSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Signup"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="get_info_for_signup" qname="operNS:get_info_for_signup" xmlns:operNS="http://Project" returnQName="retNS:get_info_for_signupReturn" xmlns:retNS="http://Project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:name" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:email" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:password" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="get_info_for_signup" qname="operNS:get_info_for_signup" xmlns:operNS="http://project" returnQName="retNS:get_info_for_signupReturn" xmlns:retNS="http://project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:email" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="get_info_for_signup"/>
 

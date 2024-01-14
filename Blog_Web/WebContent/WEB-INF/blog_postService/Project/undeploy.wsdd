@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from blog_postService WSDL service -->
+  <!-- Services from Blog_postService WSDL service -->
 
-  <service name="blog_post"/>
+  <service name="Blog_post"/>
 </undeployment>

@@ -13,23 +13,23 @@
   <!-- Services from LoginService WSDL service -->
 
   <service name="Login" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
       <parameter name="wsdlServiceElement" value="LoginService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
+      <parameter name="schemaQualified" value="http://project"/>
       <parameter name="wsdlServicePort" value="Login"/>
-      <parameter name="className" value="Project.LoginSoapBindingImpl"/>
+      <parameter name="className" value="project.LoginSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Login"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="login_details" qname="operNS:login_details" xmlns:operNS="http://Project" returnQName="retNS:login_detailsReturn" xmlns:retNS="http://Project" returnType="rtns:User_Details" xmlns:rtns="http://Project" soapAction="" >
-        <parameter qname="pns:email" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:pass" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="login_details" qname="operNS:login_details" xmlns:operNS="http://project" returnQName="retNS:login_detailsReturn" xmlns:retNS="http://project" returnType="rtns:User_Details" xmlns:rtns="http://project" soapAction="" >
+        <parameter qname="pns:email" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pass" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="login_details"/>
 
       <typeMapping
-        xmlns:ns="http://Project"
+        xmlns:ns="http://project"
         qname="ns:User_Details"
-        type="java:Project.User_Details"
+        type="java:project.User_Details"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""

@@ -1,4 +1,4 @@
-package Project;
+package project;
 
 public class User_Details {
 	public int userid;

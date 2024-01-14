@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://Project" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Project" xmlns:intf="http://Project" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://project" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://project" xmlns:intf="http://project" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://Project" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://project" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="getInfoForAdding">
     <complexType>
      <sequence>
@@ -22,17 +22,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getInfoForAddingResponse">
+   <wsdl:message name="getInfoForAddingRequest">
 
-      <wsdl:part element="impl:getInfoForAddingResponse" name="parameters">
+      <wsdl:part element="impl:getInfoForAdding" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getInfoForAddingRequest">
+   <wsdl:message name="getInfoForAddingResponse">
 
-      <wsdl:part element="impl:getInfoForAdding" name="parameters">
+      <wsdl:part element="impl:getInfoForAddingResponse" name="parameters">
 
       </wsdl:part>
 

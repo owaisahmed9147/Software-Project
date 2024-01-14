@@ -1,12 +1,11 @@
-package Project;
+package project;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
-public class blog_update {
+public class Blog_update {
 
     public String blog_updating(int ID, String newTitle, String newContent) {
         try {

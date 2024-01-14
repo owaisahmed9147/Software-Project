@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from blog_updateService WSDL service -->
+  <!-- Services from Blog_updateService WSDL service -->
 
-  <service name="blog_update" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
-      <parameter name="wsdlServiceElement" value="blog_updateService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
-      <parameter name="wsdlServicePort" value="blog_update"/>
-      <parameter name="className" value="Project.blog_update"/>
-      <parameter name="wsdlPortType" value="blog_update"/>
+  <service name="Blog_update" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
+      <parameter name="wsdlServiceElement" value="Blog_updateService"/>
+      <parameter name="schemaQualified" value="http://project"/>
+      <parameter name="wsdlServicePort" value="Blog_update"/>
+      <parameter name="className" value="project.Blog_update"/>
+      <parameter name="wsdlPortType" value="Blog_update"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://Project" xmlns:retNS="http://Project" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="blog_updating" qname="operNS:blog_updating" returnQName="retNS:blog_updatingReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://Project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ID" type="tns:int"/>
-        <parameter xmlns:pns="http://Project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
-        <parameter xmlns:pns="http://Project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:content" type="tns:string"/>
+      <operation xmlns:operNS="http://project" xmlns:retNS="http://project" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="blog_updating" qname="operNS:blog_updating" returnQName="retNS:blog_updatingReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ID" type="tns:int"/>
+        <parameter xmlns:pns="http://project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:newTitle" type="tns:string"/>
+        <parameter xmlns:pns="http://project" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:newContent" type="tns:string"/>
       </operation>
       <parameter name="allowedMethods" value="blog_updating"/>
 

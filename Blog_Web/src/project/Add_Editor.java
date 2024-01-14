@@ -1,4 +1,4 @@
-package Project;
+package project;
 import java.sql.*;
 
 public class Add_Editor {

@@ -13,16 +13,16 @@
   <!-- Services from Add_EditorService WSDL service -->
 
   <service name="Add_Editor" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://Project"/>
+      <parameter name="wsdlTargetNamespace" value="http://project"/>
       <parameter name="wsdlServiceElement" value="Add_EditorService"/>
-      <parameter name="schemaQualified" value="http://Project"/>
+      <parameter name="schemaQualified" value="http://project"/>
       <parameter name="wsdlServicePort" value="Add_Editor"/>
-      <parameter name="className" value="Project.Add_EditorSoapBindingImpl"/>
+      <parameter name="className" value="project.Add_EditorSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Add_Editor"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="getInfoForAdding" qname="operNS:getInfoForAdding" xmlns:operNS="http://Project" returnQName="retNS:getInfoForAddingReturn" xmlns:retNS="http://Project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:password" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:type" xmlns:pns="http://Project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="getInfoForAdding" qname="operNS:getInfoForAdding" xmlns:operNS="http://project" returnQName="retNS:getInfoForAddingReturn" xmlns:retNS="http://project" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:password" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:type" xmlns:pns="http://project" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="getInfoForAdding"/>
 
