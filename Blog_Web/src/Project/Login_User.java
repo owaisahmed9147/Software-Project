@@ -5,23 +5,24 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Login {
-	public User_Details login_details(String email,String pass) {
+public class Login_User {
+	public User_Details loginuser(String Username,String password) {
 		User_Details user = null;
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/blog","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("select User_ID,Username,Email,password from user_table where Email='"+email+"' and password='"+pass+"'");
-
-			while(rs.next()){
+			ResultSet rs=stmt.executeQuery("select User_ID,Username,password from user_table where Username='"+Username+"' and password='"+password+"'");
+			if(rs.next()){
 				int userid = rs.getInt(1);
 				String username = rs.getString(2);
-				String email1 = rs.getString(3);
-				String password = rs.getString(4);
-				user = new User_Details(userid,username,email1,password);
+				String Password= rs.getString(3);
+				user = new User_Details(userid,username,Password);
 				System.out.println(user);
 			}
+			else {
+                System.out.println("No user found with the provided Username and Password.");
+            }
 			con.close();
 		} catch(Exception e){
 			System.out.println(e);
